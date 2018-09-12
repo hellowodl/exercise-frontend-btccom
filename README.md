@@ -1,7 +1,6 @@
-# bitmain-frontend
+# exercise-frontend-btccom
 
-> Frontend exercise for Bitmain
-Exercise details: https://github.com/btccom/Hire/blob/master/exercise/FE-exchange-en.md
+> Frontend exercise for BTCcom: https://github.com/btccom/Hire/blob/master/exercise/FE-exchange-en.md
 
 ## Build Setup
 
@@ -20,4 +19,3 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-# exercise-frontend-btccom
