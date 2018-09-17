@@ -1,26 +1,49 @@
 <template>
   <div class="hello">
-    <order-table :orders="buyOrdersView" title="Buy Orders"/>
-    <order-table :orders="sellOrdersView" title="Sell Orders"/>
-    <matches />
+    <order-table
+      title="Buy Orders"
+      v-bind:orders="buyOrders"
+      v-bind:color="color.buyTable"
+    />
+    <order-table
+      title="Sell Orders"
+      v-bind:orders="sellOrders"
+      v-bind:color="color.sellTable"
+    />
+    <matches-table />
   </div>
 </template>
 
 <script>
-import Matches from './Matches'
-import OrderTable from './orderTable'
+import MatchesTable from './matches/Table'
+import OrderTable from './orders/Table'
 import { mapGetters } from 'vuex'
 
 export default {
   name: 'Main',
+  data () {
+    return {
+      color: {
+        buyTable: '#FF5252',
+        sellTable: '#00bcd4'
+      }
+    }
+  },
   components: {
-    Matches,
+    MatchesTable,
     OrderTable
   },
   computed: {
-    ...mapGetters(['buyOrdersView', 'sellOrdersView'])
+    ...mapGetters({
+      sellOrders: 'buy/getView',
+      buyOrders: 'sell/getView'
+    })
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style>
+  th {
+    padding: 5px 0 0 0;
+  }
+</style>

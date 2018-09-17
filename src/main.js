@@ -2,7 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import orders from './store/orders'
+import store from './store/index'
 import VueGoodTablePlugin from 'vue-good-table'
 
 import 'vue-good-table/dist/vue-good-table.css'
@@ -16,5 +16,5 @@ new Vue({
   el: '#app',
   components: { App },
   template: '<App/>',
-  store: orders
+  store: store
 })

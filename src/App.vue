@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <HelloWorld/>
+    <Main/>
   </div>
 </template>
 
@@ -11,6 +11,7 @@ export default {
   name: 'App',
   mounted () {
     this.$store.dispatch('loadOrders')
+    setInterval(() => this.$store.dispatch('loadOrders'), 3000)
   },
   components: {
     Main
@@ -25,7 +26,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 .orders {
   position: relative;
